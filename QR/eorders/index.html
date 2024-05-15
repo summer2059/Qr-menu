@@ -1,0 +1,837 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,100;1,300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/8095a6bfde.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
+ integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: radial-gradient(circle at top left, #000, #303234 75%, #ffcc23 50%);
+        }
+        #section{
+            position: relative;
+            background: url("hero-bg.jpg");
+            background-size: cover;  
+            height: 80vh;    
+            width: 100%;    
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 80px;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        nav ul {
+        list-style: none;
+        margin: 10px;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        }
+
+        nav li {
+        margin: 0 10px;
+        }
+
+        nav a{
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;        
+            padding:8px 20px;
+            text-align: center;
+            font-family: 'Trebuchet MS', sans-serif;
+            border-radius: 8px;            
+            color : #fff;
+            text-transform: uppercase;
+        }
+        nav  a:hover{
+            color:rgb(255, 204, 35);
+        }
+       .div{
+            position: absolute;
+            padding: 70px;
+            width: 100%;
+            text-align: start;
+            color: white;                                
+        }
+        .div span{
+            font-size: 8vw;
+            font-weight: 800;
+            text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.9);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .div span:not(:first-child){
+            margin-left: -0.23em;
+        } 
+     
+        .try-link{
+            background: #ffcc23;
+            text-transform: capitalize;
+            font-weight: bold;
+            border-radius: 25px;
+        }
+        .try-link:hover{
+            color: #fff;
+        }
+        .paratxt{
+            font-weight: 400px;
+            font-size: 24px;
+            font-style: italic;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .txtservices{
+            padding-top: 15px;
+            text-align: center;
+            color: #fff;
+            font-size: 45px;
+        }
+    
+
+        .card,.cards {
+            background: linear-gradient(#000, #303234);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 0px;
+            max-width: 300px;    
+            height: 400px;        
+            text-align: center;
+            color: #fff;
+        }
+        .cards{
+            background: #fff;
+            color: #000;
+        }
+        .imgs,.imgd{
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            border-radius: 12px;
+            border-bottom-right-radius: 0;
+        }
+       
+        .imgd{  
+            height: 80%;          
+            object-position: top;
+            object-fit: cover;
+            border-bottom-left-radius: 65px;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+        }
+        .card p{
+            padding: 20px;
+        }
+        .button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  background-color: #ffcc23;
+}
+
+.button:hover {
+  background-color: #ebeaea;
+  cursor: pointer;
+}
+.services,.team {
+  margin: 40px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.aboutus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.left-container {
+  flex: 1;
+}
+
+.right-container {
+  flex: 2;
+}
+
+.abtlg{
+    height: 400px;
+}
+
+.right-container .paratext {
+
+    color: #fff;
+    font-weight: 400px;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Lato', sans-serif;
+}
+footer {
+  background: linear-gradient(#000, #303234);
+  padding: 40px 0;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 40px 0 40px;
+}
+
+.left,
+.center,
+.right {
+  width: 30%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+  color: #fff;
+}
+li{
+    padding: 5px;
+}
+.h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.copy p {
+  font-size: 14px;
+  color: #999;
+}
+#service,#about,#cnt{
+   padding-top: 35px; 
+} 
+.icons{
+   display: inline-flex;
+}
+.icons .icon{
+    margin: 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+.icons .icon a{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    display: block;
+    background: #fff;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 10px 10px rgba(0,0,0,.1);
+    z-index: 2;
+    transition: all .4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.icons .icon a i{
+    line-height: 40px;
+    font-size: 25px;
+}
+.icons .icon .tooltip{
+    background: #fff;
+    position: absolute;
+    top: 0px;
+    color: #fff;
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+    padding: 4px 4px 10px 4px;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px rgba(0,0,0,.1);
+    opacity: 0;
+    pointer-events: none;
+    font-weight: bold;
+}
+.icons .icon:hover .tooltip{
+    top: -60px;
+   opacity: 1; 
+   pointer-events: auto;
+   transition: all .4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.icons .icon .tooltip::before{
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 15px;
+    background: #fff;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+.icons .icon:hover a,
+.icons .icon:hover .tooltip{
+ text-shadow: 0 10px 10px rgba(0,0,0,.1);   
+}
+.icons .facebook a ,
+.icons .facebook .tooltip,
+.icons .facebook .tooltip::before
+{
+   color: #fff;
+   background: #006aff;
+}
+.icons .instagram a{
+   color: #fff;
+   background: radial-gradient(circle at 30% 107%,
+   #fdf497 0%,#fdf497 5%,
+   #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.icons .instagram .tooltip,
+.icons .instagram .tooltip::before{
+   color: #fff;
+  background: #d6249f;
+}
+.icons .twitter a ,
+.icons .twitter .tooltip,
+.icons .twitter .tooltip::before{
+   color: #fff;
+   background: #1da1f2;
+}
+.icons .whatsapp a ,
+.icons .whatsapp .tooltip,
+.icons .whatsapp .tooltip::before{
+   color: #fff;
+   background: #25d366;
+}
+.icons .youtube a {
+   color: #ff0000 ;
+}
+.icons .youtube .tooltip{
+   color: #fff;
+}
+.icons .youtube .tooltip,
+.icons .youtube .tooltip::before{
+   background: #ff0000;
+}
+#backtop {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          border: none;
+          outline: none;
+          background: none;
+          }
+        #backtop i{
+          font-size: 32px;
+          border-radius: 50%;
+          color: #ffcc23;
+        }
+                  #contact {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 30px;
+            gap: 30px;
+          }            
+          
+          .map {
+            background-color: none;
+            border-radius: 12px;
+          }
+          .contactus {
+	backdrop-filter: blur(25px);
+	border-radius: 12px;
+  text-align: center;
+}
+h2{
+	position: relative;
+	padding: 0 0 10px;
+	margin: 25px 0 10px 0;
+	color: #fff;
+}
+
+h2:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #ffcc23;
+}
+#move{
+	position: relative;
+	font-size: 1.5em;
+	color: transparent;
+	-webkit-text-stroke: 2px transparent;
+
+}
+#move::before{
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 20%;
+	/* width: 200px; */
+	height: 100%;
+	color: #ffcc23;
+	-webkit-text-stroke: 0px #383d52;
+	border-right: 2px solid #ffcc23;
+	overflow: hidden;
+	animation: animate 9s linear infinite;
+}
+text area{
+	max-height: 100px;
+}
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+	border-radius: .5em;
+	color: #fff;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+}
+textarea{
+	min-height: 150px;
+}
+
+.btn{
+	width: 50%;
+	padding: 0.5rem 1rem;
+	/* background-color: #2ecc71; */
+	background: #ffcc23;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+	border-radius: .7em;
+}
+.ctxt{
+  text-align: center;
+}
+.btn:hover{
+    background-color: #27ae60;
+}
+p{
+	padding-top: 10px;
+}
+@keyframes animate {
+	0%,10%,100%{
+		width: 0%;
+	}
+	50%,70%,90%{
+		width: 58%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+
+   
+    nav {
+            padding: 10px;
+            height: 50px;
+        }
+
+        nav ul {    
+        margin: 5px;
+        }
+
+        nav li {
+        margin: 0;
+        }
+
+        nav a{
+            font-size: 14px;
+            font-weight: 400;        
+            padding:8px 10px;
+            text-transform: capitalize;
+        }
+        #section{
+          height:  49vh; 
+          background-position: end;
+        }
+        footer {
+        background: linear-gradient(#000, #303234);
+        padding: 10px;
+        width: 100%;
+        height: 10%;
+        
+        }
+        #service{
+            padding: 0;
+        }
+        .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0;
+        }
+
+        .left,
+        .center,
+        .right {
+        width: 40%;
+        }
+        .h3{
+        font-size: 16px;
+        }
+        .left-container{
+            display: none;
+        }
+        .paratxt{
+            font-size: 16px;
+        }
+        .right-container .paratext{
+            font-size: 14px;
+        }
+        .txtservices{
+            font-size: 24px;
+        }
+        #service{
+            background: linear-gradient(#000, #303234);
+            height: auto;
+        }
+        footer{
+            padding: 10px;
+        }
+  .services,.team {
+    grid-template-columns: 1fr;
+  }
+  #service,#about,#Team{
+   padding-top: 40px; 
+}
+.h3{
+    font-size: 16px;
+}
+.icons{
+   display: inline;
+   
+}
+.icons .icon{
+    margin-top: 10px;    
+    cursor: pointer;
+    display: flex;
+    align-items: start;
+    justify-content: center; 
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+.icons .icon a{
+    height: 30px;
+    width: 30px;
+}
+.icons .icon a i{
+    line-height: 30px;
+    font-size: 15px;
+}
+.icons .icon .tooltip{
+ display: none;
+}
+.icons .icon:hover .tooltip{
+    display: none;
+}
+.icons .icon .tooltip::before{
+ display: none;
+ 
+}
+.icons .icon:hover a,
+.icons .icon:hover .tooltip{
+ display: none;   
+}
+}
+    </style>
+</head>
+<body>
+    <div id="section">
+        <nav  class="try-div">
+            <ul>
+                <li><a href="#section">Home</a></li>
+              <li><a  href="#service">Services</a></li>
+              <li><a  href="#about">About</a></li>
+              <!-- <li><a  href="#cnt">contact</a></li> -->
+              <li><a class="try-link" href="http://localhost/summer_project_sample/QR/eorders/menufood.php">Order</a></li>
+            </ul>
+    </nav>
+
+    <div class="div">
+        <span>E </span>
+        <span> - </span>
+        <span>O</span>
+        <span>R</span>
+        <span>D</span>
+        <span>E</span>
+        <span>R</span>
+        <span>S</span>
+        <p class="paratxt"> E - orders is a web software designed to take orders inside hotels, bars, or restraunts <br>
+        and render into the staff working at the place. it makes it easier to take orders and even <br>
+        much less time to serve clients</p>
+    </div>
+</div>
+<div id="service">
+    <h2 class="txtservices">Our Services</h2>
+    <div class="services">        
+        <div class="card">
+            <img src="chapati.jpg"  class="imgs">
+          <h3>Quick Service</h3>
+          <p>Our Quick Service option is perfect for customers who are in a hurry and need to grab a quick bite to eat.</p>
+          <a href="#" class="button">View More</a>
+        </div>
+        <div class="card">
+            <img src="rice.jpg"  class="imgs">
+          <h3>Fast Casual</h3>
+          <p>Our Fast Casual option combines the convenience of fast food with the quality and taste of a sit-down restaurant.</p>
+          <a href="#" class="button">View More</a>
+        </div>        
+        <div class="card">
+            <img src="ugali.jpg"  class="imgs">
+          <h3>Casual Dining</h3>
+          <p>Our Casual Dining option provides a relaxed and comfortable atmosphere that is perfect for families and groups. </p>
+          <a href="#" class="button">View More</a>
+        </div>
+        <div class="card">
+            <img src="nyama.jpg"  class="imgs">
+          <h3>Fine Dining</h3>
+          <p> Our Fine Dining option offers a range of high-end dishes that are prepared with the finest and freshest ingredients.</p>
+          <a href="#" class="button">View More</a>
+        </div>
+      </div> 
+        <div id="about">
+            <h2 class="txtservices">About Us</h2>
+            <div class="aboutus">
+                <div class="left-container">
+                  <img src="about.png" class="abtlg">
+                </div>
+                <div class="right-container">
+                  <p class="paratext">Our restaurant has implemented a state-of-the-art ordering system that allows <br>
+                                    customers to order and pay for their food directly from their table. The system <br> 
+                                    is fast, easy and convenient, allowing customers to customize their order, split <br>
+                                     the bill & add special requests. <br>
+                                    Thank you for choosing our restaurant, and we hope you enjoy the convenience and <br>
+                                     ease of our ordering system.</p>
+                </div>
+              </div>
+              
+        </div> 
+        <!-- <div id="cnt">
+              <h2 class="txtservices">Contact Us</h2>
+        <di id="contact">          
+          <div class="contactus">
+            <h3  data-text="Tasty_Delicious_Meal_For_You_&#128540&#128522&#128522&#128512;" id="move">Tasty_Delicious_Meal_For_You_&#128540;&#128522;&#128522;&#128512;</h3>     
+            <h2 class="ctxt">Make Contact</h2>
+            <input type="text" class="field" placeholder="Your Name" required="">
+            <input type="text" class="field" placeholder="Your Email" required="">
+            <input type="text" class="field" placeholder="Phone" required="">
+            <textarea placeholder="Message" class="field" required=""style="resize:none"></textarea>
+            <input type="submit" value="send" class="btn">
+          </div>       
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.628049300026!2d36.81844079041461!3d-1.285585544808762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d714b90b4d%3A0xf58d8f9b297c294c!2sCentral%20Business%20District%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1684687717669!5m2!1sen!2ske" 
+            width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>      
+      </div>
+      </div>   -->
+<!-- <div id="Team">
+    <h2 class="txtservices">Our Team</h2>
+    <div class="team">
+        <div class="cards">
+          <img src="one.jpg" class="imgd">
+          <h3>Alphaxide . K</h3>
+          <p>Lead Developer</p>
+        </div>
+        <div class="cards">
+          <img src="d.jpg" class="imgd">
+          <h3>Lk . Brian</h3>
+          <p>Designer</p>
+        </div>
+        <div class="cards">
+          <img src="two.jpg" class="imgd">
+          <h3>S . Macharia</h3>
+          <p>Project Manager</p>
+        </div>
+        <div class="cards">
+            <img src="three.jpg" class="imgd">
+            <h3>M . Tony</h3>
+            <p>Chief programmer</p>
+          </div>
+      </div>
+</div> -->
+ </div>
+ <footer>
+    <div class="container">
+      <div class="left">
+        <h3 class="h3">Contact info</h3>
+        <ul>
+          <li>chhorepatan</li>
+          <li>chhorepatan, pokhara</li>
+          <li>98********</li>
+          <li>tanahuKhajaGhar20@gmail.com</li>
+        </ul>
+      </div>
+      <div class="center">
+        <h3 class="h3">Follow Us</h3>
+        <div class="icons">		
+            <div class="icon facebook">
+               <div class="tooltip">facebook</div>
+               <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+            <div class="icon instagram">
+               <div class="tooltip">instagram</div>
+               <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="icon twitter">
+               <div class="tooltip">twitter</div>
+               <a href=""><i class="fa-brands fa-twitter"></i></a>
+               </div>
+            <div class="icon youtube">
+               <div class="tooltip">youtube</div>
+               <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>           
+          </div>
+      </div>
+      <div class="right">
+        <h3 class="h3">Opening Hours</h3>
+        <ul>
+            <li>Sunday - friday</li>
+          <li> 9:30am - 1:00pm</li>    
+          <li>saturday</li>     
+          <li>12:00pm - 11pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <p>&copy; 2023 sagar. All rights reserved.</p>
+    </div>
+  </footer>
+  <button id="backtop"><i class="fa-sharp fa-solid fa-circle-arrow-up"></i></button>
+  <script>
+const links = document.querySelectorAll('.scroll-link');
+const navbar = document.querySelector('nav');
+
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    const target = document.querySelector(href);
+
+    if (target && target.offsetParent !== null) {
+      e.preventDefault();
+      const offsetTop = target.offsetTop - navbar.offsetHeight;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+const backToTopButton = document.getElementById("backtop");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+});
+
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+  </script>
+    <script>
+      var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?41913';
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = url;
+      var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#4dc247",
+      "ctaText":"Message Us",
+      "borderRadius":"25",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"right",
+      "fontFamily":"'Trebuchet MS',sans-serif",
+  },
+  "brandSetting":{
+      "brandName":"E-ORDERS",
+      "brandSubTitle":"Typically replies within a day",
+      "brandImg":"https://cdn.clare.ai/wati/images/WATI_logo_square_2.png",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"Hello, I have a question about {{page_link}}",
+      "backgroundColor":"#0a5f54",
+      "ctaText":"Start Chat",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"9869066879",    
+  
+  }
+  };
+      s.onload = function() {
+          CreateWhatsappChatWidget(options);
+      };
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+  </script>
+</body>
+</html>
